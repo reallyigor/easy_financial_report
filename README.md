@@ -19,11 +19,11 @@ python finance_request.py --company SYMBOL --function REPORT_TYPE --api-key YOUR
 
 REPORT_TYPE could be one of:
 
-cash_flow
-balance_sheet
-income_statement
-earnings
-listing_status
+1. `cash_flow`
+2. `balance_sheet`
+3. `income_statement`
+4. `earnings`
+5. `listing_status`
 
 Example:
 
