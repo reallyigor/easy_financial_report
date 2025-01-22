@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import requests
 from loguru import logger
+from datetime import datetime
 
 
 if __name__ == "__main__":
@@ -16,10 +17,12 @@ if __name__ == "__main__":
     r = requests.get(url)
     data = r.json()
 
-    with open(f"{args.function.lower()}.json", "w") as f:
+    date_suffix = datetime.now().strftime("%Y%m%d")
+    
+    with open(f"{args.function.lower()}_{date_suffix}.json", "w") as f:
         json.dump(data, f)
 
     df = pd.DataFrame(data["quarterlyReports"])
-    df.to_csv(f"{args.function.lower()}_{args.company}.csv", index=False)
+    df.to_csv(f"{args.function.lower()}_{args.company}_{date_suffix}.csv", index=False)
 
     logger.info("Done")
