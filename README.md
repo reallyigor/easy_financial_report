@@ -1,5 +1,3 @@
-Here's a README.md file for your financial data fetching project:
-
 # Install
 
 ```bash
