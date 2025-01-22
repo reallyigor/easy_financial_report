@@ -3,8 +3,8 @@ Here's a README.md file for your financial data fetching project:
 # Install
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/reallyigor/easy_financial_report
+cd easy_financial_report
 ```
 
 ```bash
