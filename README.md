@@ -6,25 +6,17 @@ cd easy_financial_report
 ```
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 # Use
 
 ```bash
-python finance_request.py --company SYMBOL --function REPORT_TYPE --api-key YOUR_API_KEY
+python finance_request.py --companies SYMBOL1,SYMBOL2,SYMBOL3,...SYMBOLN --api-key YOUR_API_KEY
 ```
-
-REPORT_TYPE could be one of:
-
-1. `cash_flow`
-2. `balance_sheet`
-3. `income_statement`
-4. `earnings`
-5. `listing_status`
 
 Example:
 
 ```bash
-python finance_request.py --company IBM --function CASH_FLOW --api-key 8DMICRDAT5ZAQSUZ
+python finance_request.py --companies IBM,AAPL --api-key 8DMICRDAT5ZAQSUZ
 ```
