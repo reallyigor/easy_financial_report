@@ -18,7 +18,7 @@ python finance_request.py --companies SYMBOL1,SYMBOL2,SYMBOL3,...SYMBOLN --api-k
 You can use optional `output_dir` argument, for example, to cache your results.
 
 ```bash
-python finance_request.py --companies SYMBOL1,SYMBOL2,SYMBOL3,...SYMBOLN --api-key YOUR_API_KEY --output_dir ./cool_companies
+python finance_request.py --output_dir ./cool_companies --companies SYMBOL1,SYMBOL2,SYMBOL3,...SYMBOLN --api-key YOUR_API_KE
 ```
 
 Example:
