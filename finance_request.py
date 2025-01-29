@@ -11,14 +11,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Get financial data for companies")
     parser.add_argument("--companies", type=str, required=True, help="Comma-separated company symbols (e.g. IBM,AAPL,MSFT)")
     parser.add_argument("--api-key", type=str, required=True, help="Alpha Vantage API key", default="8DMICRDAT5ZAQSUZ")
+    parser.add_argument("--output_dir", type=str, help="Directory to save reports (default: reports_YYYYMMDD)", default=None)
     args = parser.parse_args()
 
     companies = [company.strip() for company in args.companies.split(",")]
     date_suffix = datetime.now().strftime("%Y%m%d")
-    report_dir = Path(f"reports_{date_suffix}")
+    
+    if args.output_dir:
+        report_dir = Path(args.output_dir)
+    else:
+        report_dir = Path(f"reports_{date_suffix}")
+        
     json_dir = report_dir / "jsons"
     
-    report_dir.mkdir(exist_ok=True)
+    report_dir.mkdir(exist_ok=True, parents=True)
     json_dir.mkdir(exist_ok=True)
     
     functions = ["CASH_FLOW", "BALANCE_SHEET", "INCOME_STATEMENT", "EARNINGS"]
